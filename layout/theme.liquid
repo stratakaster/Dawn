@@ -29,6 +29,14 @@
 
     {% render 'meta-tags' %}
 
+    {%- comment -%}Preload important resources{%- endcomment -%}
+    <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}">
+    <link rel="preload" as="style" href="{{ 'custom.js' | asset_url }}">
+
+    <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'custom.js' | asset_url }}">
+
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
